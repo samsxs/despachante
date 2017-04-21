@@ -1,0 +1,17 @@
+#show h1{
+	font-family: "Arial";
+	font-weight: bold;
+	font-size: 50px;
+}
+.negrit{
+	font-weight: bold;
+}
+#show p{
+	font-family: "Arial";
+}
+#show a{
+	font-family: "Arial";
+	text-decoration: none;
+	color:#00BFB2;
+	font-size: 20px;
+}

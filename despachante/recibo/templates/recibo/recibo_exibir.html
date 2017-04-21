@@ -1,9 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Recibo</title>
+	<link href="http:/pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <h1>Lista de Recibos</h1>
+{% for recibo in recibo %}
+<div class="container-fluid">
+	<div class="section">
+		<div class="row">
+			<div class="col-md-8">
+				<h2>{{recibo.name}}</h2>
+				<h3>{{recibo.celular}}</h3>
+				<p><a href="{{recibo.id}}"><i>Editar</i></a></p>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="panel-heading">
+					<h2>Dados do Recibo</h2>
+				</div>
+				<div class="panel-body">
+					<p><span class="negrit">Data de Emissão : </span>{{recibo.emissao}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% empty %}	
+	<div class="alert alert-danger"><h2>Você ainda não cadastrou nenhum recibo!</h2></div>
+{% endfor %}
+</div>
 </body>
 </html>
